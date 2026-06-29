@@ -1,0 +1,34 @@
+# Self-contained garak run config - light S5c scan of project 0 /ask (as-is, :8000).
+# Run: uvx --from garak garak --config garak_project0.yaml --report_prefix p0_dan
+#
+# Probe: dan.DanInTheWild = a SUBSET of the in-the-wild jailbreak library; the
+# subset size is the `soft_probe_prompt_cap` below (kept small - each /ask call
+# is ~18s on llama3.2, so 8 prompts ~= a few minutes).
+#
+# skip_codes [400, 422]: project 0 returns 400 when its harmful-keyword blocklist
+# refuses (the blocklist runs even in as-is mode) and 422 on empty input. garak
+# otherwise treats any 4xx as a FATAL client error and aborts the whole run;
+# listing them as skip_codes makes garak record "no output" for that prompt and
+# keep going - a refusal becomes a (correct) non-jailbreak, not a crash.
+---
+run:
+  generations: 1
+  soft_probe_prompt_cap: 8
+
+plugins:
+  model_type: rest
+  probe_spec: dan.DanInTheWild
+  generators:
+    rest:
+      RestGenerator:
+        name: project0-ask-asis
+        uri: http://localhost:8000/ask
+        method: post
+        headers:
+          Content-Type: application/json
+        req_template_json_object:
+          question: $INPUT
+        response_json: true
+        response_json_field: answer
+        request_timeout: 120
+        skip_codes: [400, 422]

@@ -1,0 +1,28 @@
+# Bounded, SERIAL (parallel caused ReadTimeout crashes - Ollama serializes anyway) S5c run - 150 of the DanInTheWild jailbreaks vs project 0
+# /ask (as-is, :8000). A 150-prompt sample gives the same ASR distribution as the
+# full 666 without the ~4.5h serial wall-clock; parallel_attempts fans out the
+# requests so Ollama works on several at once. ETA ~20-40 min.
+# Run: uvx --from garak garak --config garak_project0_sample.yaml --report_prefix p0_dan_sample
+---
+run:
+  generations: 1
+  soft_probe_prompt_cap: 150
+
+
+plugins:
+  model_type: rest
+  probe_spec: dan.DanInTheWild
+  generators:
+    rest:
+      RestGenerator:
+        name: project0-ask-asis
+        uri: http://localhost:8000/ask
+        method: post
+        headers:
+          Content-Type: application/json
+        req_template_json_object:
+          question: $INPUT
+        response_json: true
+        response_json_field: answer
+        request_timeout: 180
+        skip_codes: [400, 422]

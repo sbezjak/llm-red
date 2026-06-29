@@ -1,0 +1,46 @@
+[project]
+name = "llm_red"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# S5d cross-project flow: fire the indirect-injection fixture at project 2
+# (RAG) as a SECONDARY target. Heavy (chromadb + sentence-transformers), so it
+# is opt-in - the default mocked test path never needs it. RagProvider imports
+# llm_rag lazily, so importing the provider without this extra is fine; only the
+# live RAG test (`-m live`) needs `uv sync --extra rag`.
+rag = ["llm_rag"]
+
+[tool.uv.sources]
+llm_rag = { path = "../llm-rag", editable = true }
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.23",
+    "pytest-cov>=5",
+    "pytest-html>=4",
+    "respx>=0.21",
+    "ruff>=0.6",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["llm_red"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "--html=reports/report.html --self-contained-html"
+log_cli_level = "INFO"
+markers = [
+    "mocked: fast unit tests, target HTTP API mocked with respx",
+    "live: requires the live target API (project 0) running",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
