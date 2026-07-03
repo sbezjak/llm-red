@@ -1,6 +1,6 @@
 # Walkthrough
 
-Live HTML findings report: [report-findings.html](https://sbezjak.github.io/llm-red/reports/report-findings.html)
+Live HTML reports: [findings report](https://sbezjak.github.io/llm-red/reports/report-findings.html) · [full suite run](https://sbezjak.github.io/llm-red/reports/report-full-live-2026-06-29.html)
 
 I'm an automation tester. My job is normally to check that an app does the same thing every time. This project is the opposite kind of testing: I fire adversarial prompts at an LLM-backed API and try to make it misbehave - and the same attack can work one run and fail the next.
 
