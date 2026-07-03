@@ -1,1 +1,6 @@
+# Every committed .html here is generated report output (pytest-html and the
+# garak scanner), not source - and everything under reports/ likewise. Keep it
+# out of GitHub's language stats so the repo reads as the Python project it is.
+# None of this affects Pages; the reports still serve.
 reports/** linguist-generated=true
+*.html linguist-generated=true

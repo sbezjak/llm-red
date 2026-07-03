@@ -39,6 +39,7 @@ log_cli_level = "INFO"
 markers = [
     "mocked: fast unit tests, target HTTP API mocked with respx",
     "live: requires the live target API (project 0) running",
+    "finding: replays a documented finding (F1-F19) into the committed findings report",
 ]
 
 [tool.ruff]

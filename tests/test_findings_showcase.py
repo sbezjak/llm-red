@@ -36,6 +36,11 @@ from llm_red.findings import (
 
 logger = logging.getLogger("tests")
 
+# The whole module IS the findings showcase - tag it so the committed findings
+# report is built with `-m finding` and contains exactly these rows (every finding
+# plus the campaign/taxonomy context), never the rest of the hermetic suite.
+pytestmark = pytest.mark.finding
+
 FINDINGS_FILE = Path(__file__).resolve().parent.parent / "data" / "findings.yaml"
 REPORTS_DIR = Path(__file__).resolve().parent.parent / "reports"
 

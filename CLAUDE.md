@@ -56,6 +56,10 @@ Use `uv` for all environment and execution tasks:
 - Run only fast (mocked) tests: `uv run pytest -m mocked`
 - Run only tests that hit the live target API: `uv run pytest -m live`
 - Skip live tests: `uv run pytest -m "not live"`
+- Rebuild the committed findings report: `uv run pytest -m finding
+  --html=reports/report-findings.html` - the `finding` marker (on
+  `tests/test_findings_showcase.py`) selects exactly the finding rows, so the
+  hosted report is findings-only, never the whole hermetic suite.
 - HTML report: every `uv run pytest` writes a UNIQUE `reports/report-<UTC
   timestamp>.html` - the default `reports/report.html` is auto-rewritten to a
   timestamp by `tests/conftest.py` (`pytest_configure`, tryfirst), so **no run can
@@ -63,7 +67,8 @@ Use `uv` for all environment and execution tasks:
   remember (a written "don't overwrite" rule was broken within 20 min; enforcement
   has to be mechanical - see working_with_ai.md). Auto-timestamped files are
   gitignored; a report to COMMIT/host is generated with an explicit descriptive
-  name (`uv run pytest -m "not live" --html=reports/report-findings.html`), which
+  name (`uv run pytest -m finding --html=reports/report-findings.html` for the
+  findings report; `-m "not live"` or a live run for a full-suite report), which
   conftest leaves untouched. Self-contained, captured logs at INFO+.
 - Findings are non-deterministic, so the committed/hosted report is built
   DETERMINISTICALLY from saved real transcripts via fixture-injected /
