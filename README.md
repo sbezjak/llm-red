@@ -1,5 +1,7 @@
 # llm-redteam
 
+> Part of a [5-project AI/QA testing portfolio](https://github.com/sbezjak/sbezjak) - all projects and write-ups.
+
 A pytest-based red team test suite for an LLM-backed API. It fires a
 catalog of adversarial inputs at an existing FastAPI + LLM service
 ([project 0](https://github.com/sbezjak/llm-api-testing)) and decides, per
@@ -10,8 +12,6 @@ New here? The [walkthrough](docs/walkthrough.md) is the guided tour - why the
 project exists and every finding with its evidence. This README is the reference.
 
 Live reports: [findings report](https://sbezjak.github.io/llm-red/reports/report-findings.html) · [full suite run](https://sbezjak.github.io/llm-red/reports/report-full-live-2026-06-29.html)
-
-> Part of a [5-project AI/QA testing portfolio](https://github.com/sbezjak/sbezjak) - all projects and write-ups.
 
 ## Rules of engagement
 
