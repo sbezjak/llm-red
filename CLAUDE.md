@@ -141,6 +141,20 @@ Preserve these seams when adding code:
   out of sync, so the registers serve different artifacts, never two copies
   of one thing. Do not add a standalone concepts/glossary file; notes.md
   plus the walkthrough cover both lookup and teaching.
+- **Ground each front-door artifact in the previous projects' versions
+  before drafting.** The article, walkthrough, and LinkedIn post all come
+  out measurably better when the model first reads the *same* artifact from
+  the earlier projects (A/B confirmed: cold start < partial context <
+  pointed at all prior writings - do the last one). Links live in
+  `PORTFOLIO.md` (single source of truth, don't copy them here), but read
+  the LOCAL copies - they are faster and the LinkedIn URLs are auth-walled:
+  the sibling repos at `../llm-eval-harness/`, `../llm-rag/`,
+  `../llm-api-testing/` hold the prior `article.md` / `docs/*article*.md`.
+  For a LinkedIn post specifically, match the shipped voice: curiosity /
+  first-person hook, one finding told as a story, an easy-case-vs-hard-case
+  contrast, no arrows / hashtags / stacked numbers, closing line exactly
+  `Automation engineer learning AI testing. Project N of 5. More from the
+  series: <link>`.
 - **Default to production / best-practice solutions; take the pragmatic
   shortcut only when the trade-off is justified for this project's scope,
   and call the trade-off out explicitly.** Don't silently pick the easy

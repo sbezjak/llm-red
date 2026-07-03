@@ -1,5 +1,5 @@
 """Findings showcase - the deterministic, network-free view of every documented
-finding (F1-F17), rendered into the committed pytest-html report.
+finding (F1-F19), rendered into the committed pytest-html report.
 
 Why this exists: the live suite (`-m live`) hits a non-deterministic model, so no
 single live run ever contains every finding, and a run that surfaced one can be
@@ -62,7 +62,7 @@ def test_campaign_overview():
     families = sorted({f.get("family", "") for f in FINDINGS if f.get("family")})
     logger.info(
         "\n=== RED-TEAM CAMPAIGN OVERVIEW ===\n"
-        "findings shown: %d (F1-F17, some grouped)\n"
+        "findings shown: %d (F1-F19, some grouped)\n"
         "targets: project-0 plain :8000 and hardened :8001 (HARDENED=1, canary + L1/L2/L3)\n"
         "models: llama3.2 (target), llama3.1:8b (swap), qwen2.5:7b (LLM-judge), "
         "llama-guard3:1b (classifier)\n"

@@ -36,23 +36,23 @@ reports/report.html
 reports/report-[0-9]*.html
 
 # --- Private working notes (not for the public-facing repo) -------------------
-# Mirrors the RAG repo: the planning notebook, the dense findings log, the
-# article scribbles, and the next-project starter stay local. The public door is
-# README + docs/walkthrough.md, which stand alone (PLAN.md discipline lesson 6).
 PLAN.md
 notes.md
 article.md
+article-notes.md
+linkedin.md
 plan-agent.md
 working_with_ai.md
 human-tasks.md
 PORTFOLIO.md
+S5e-runbook.md
 
 # --- Tier-2 reliability side-experiment (private by decision) -----------------
 # evidence/ and experiments/ ARE committed - the raw transcripts + finding
 # writeups are useful and the published report carries the model output anyway
 # (PLAN.md S6: ship unredacted, nothing actionable to redact). The sole
 # exception is the tier-2 study: it is explicitly NOT red team and must appear
-# in no public-facing file (PLAN.md: one theme; public files stand alone).
+# in no public-facing files.
 experiments/run_tier2.py
 experiments/tier2-reliability.md
 experiments/tier2-results.md
