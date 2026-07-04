@@ -1,4 +1,4 @@
-# llm-redteam
+# llm-red
 
 > Part of a [5-project AI/QA testing portfolio](https://github.com/sbezjak/sbezjak) - all projects and write-ups.
 
