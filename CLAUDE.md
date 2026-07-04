@@ -193,7 +193,7 @@ Preserve these seams when adding code:
   *form* of a recipe but gibberish content, or look like a bypass while being a
   decode-failure ramble - only reading the whole thing tells them apart. Open the
   response and read it end to end, that reading IS the work, not an optional
-  check. (Learned 2026-06-14, see notes.md F5.)
+  check.
 - **Prefer the smallest solution that solves the problem; after writing,
   re-read and cut machinery the task didn't ask for.** Asked to "add
   validation", don't reach for a configurable framework with custom
