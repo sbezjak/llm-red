@@ -141,11 +141,11 @@ assistant works from: the seams to keep, the working style, what counts as
 evidence. The rest ran through working notes kept out of the repo, named here so
 the method is on the record:
 
-- `PLAN.md` - the scope doc: which families are in or out, the session arc, the
-  stopping rule. What kept this focused, not sprawling.
-- `notes.md` - a findings-first record of each bypass: what it was, why it
-  works, and why the detector called it a bypass or safe.
-- `human-tasks.md` - the model's queue of human-only tasks (reading, findings call, calibrations, dataset labeling). The assistant handed judgment calls back instead of guessing.
+- `PLAN.md` - the scope doc, which families are in or out, the session arc, the
+  stopping rule.
+- `notes.md` - a findings record or any new learning what it was and why it
+  works.
+- `human-tasks.md` - the model's queue of human-only tasks (reading, findings call, calibrations, dataset labeling).
 
 ## Further reading
 
