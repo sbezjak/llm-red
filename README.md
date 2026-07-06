@@ -143,7 +143,7 @@ the method is on the record:
 
 - `PLAN.md` - the scope doc, which families are in or out, the session arc, the
   stopping rule.
-- `notes.md` - a findings record or any new learning what it was and why it
+- `notes.md` - a findings record or any new learning, what it was and why it
   works.
 - `human-tasks.md` - the model's queue of human-only tasks (reading, findings call, calibrations, dataset labeling).
 
