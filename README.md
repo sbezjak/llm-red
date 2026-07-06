@@ -145,8 +145,7 @@ the method is on the record:
   stopping rule. What kept this focused, not sprawling.
 - `notes.md` - a findings-first record of each bypass: what it was, why it
   works, and why the detector called it a bypass or safe.
-- `human-tasks.md` - the model's queue of human-only tasks. The interesting half
-  of the split: the assistant handed judgment calls back instead of guessing.
+- `human-tasks.md` - the model's queue of human-only tasks (reading, findings call, calibrations, dataset labeling). The assistant handed judgment calls back instead of guessing.
 
 ## Further reading
 
